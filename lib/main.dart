@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kyucsa/screens/homeScreen.dart';
 import 'package:kyucsa/screens/login.dart';
 import 'package:kyucsa/screens/signin.dart';
+import 'package:kyucsa/screens/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'KYUCSA App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),
+      home: SplashScreen(),
       routes: {
         '/home': (context) => HomeScreen(),
         '/signin': (context) => SignInScreen(),
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
 }
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

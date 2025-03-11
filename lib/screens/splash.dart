@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import 'package:kyucsa/screens/welcome.dart'; // Ensure this path is cor
+import 'package:kyucsa/main.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

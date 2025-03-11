@@ -68,15 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
-              rippleColor: Colors.grey[300]!,
-              hoverColor: Colors.grey[100]!,
+              rippleColor: const Color.fromARGB(255, 61, 59, 59)!,
+              hoverColor: const Color.fromARGB(255, 234, 234, 236)!,
               gap: 8,
-              activeColor: Colors.black,
+              activeColor: const Color.fromARGB(255, 216, 128, 4),
               iconSize: 24,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               duration: Duration(milliseconds: 400),
               tabBackgroundColor: Colors.grey[100]!,
-              color: Colors.black,
+              color: const Color.fromARGB(255, 27, 3, 208),
               tabs: [
                 GButton(
                   icon: Icons.home,
@@ -87,8 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Search',
                 ),
                 GButton(
-                  icon: Icons.person,
-                  text: 'Profile',
+                  icon: Icons.settings,
+                  text: 'Settings',
                 ),
               ],
               selectedIndex: _selectedIndex,
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Text(
           'Latest Updates',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue),
         ),
         SizedBox(height: 16),
         ...updates.map((update) => Card(
@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(height: 24),
         Text(
           'Learning Materials',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue),
         ),
         SizedBox(height: 16),
         ...learningMaterials.map((material) => Card(
