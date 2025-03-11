@@ -1,24 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:kyucsa/screens/splash.dart';
+import 'package:kyucsa/screens/homeScreen.dart';
+import 'package:kyucsa/screens/login.dart';
+import 'package:kyucsa/screens/signin.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Kyucsa App',
-      theme: ThemeData(   
+      title: 'KYUCSA App',
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(
+      home: WelcomeScreen(),
+      routes: {
+        '/home': (context) => HomeScreen(),
+        '/signin': (context) => SignInScreen(),
+        '/login': (context) => LoginScreen(),
+      },
+    );
+  }
+}
 
-      ), // Set SplashScreen as the initial screen
+class WelcomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome to KYUCSA App'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/signin');
+              },
+              child: Text('Sign In'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              child: Text('Login'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
